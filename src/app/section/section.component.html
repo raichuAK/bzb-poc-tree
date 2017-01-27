@@ -1,0 +1,30 @@
+  <div class="section" >
+  <p>
+  section starts
+  </p>
+   <button type="button" (click)= "addStep()">ADD STEP
+  </button>
+   <button type="button" (click)= "addSection()">ADD SECTION
+  </button> 
+  <ul >
+    <li *ngFor="let node of _dataModel.getChilds()" >
+      <app-step *ngIf = "node != null && node.type =='STEP'" [dataModel]="node">
+      </app-step>
+      <app-section *ngIf = "node != null &&node.type =='SECTION'" [dataModel]="node"  >
+      </app-section>
+      <br>
+      <button type="button" (click)= "addStepAfter(node)">ADD STEP
+  </button>
+   <button type="button" (click)= "addSectionAfter(node)">ADD SECTION
+  </button> 
+
+    </li>
+    </ul>
+
+    <p>  section ends</p>
+      <button type="button" (click)="delete()" >Delete Section</button>
+
+
+  </div>
+
+

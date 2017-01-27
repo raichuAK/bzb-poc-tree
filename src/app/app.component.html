@@ -1,0 +1,44 @@
+ <h1>
+  {{title}}</h1>
+<!-- 
+  <app-section [dataModel]="data">
+  </app-section> -->
+  
+
+ 
+
+     <div class="row">
+              <div class="col-sm-3">
+                        <div class="panel panel-success">
+                              <div class="panel-heading">
+                                  Favorite drinks
+                              </div>
+                                <div class="panel-body">
+                                     <ul class="list-group" dnd-sortable-container [sortableData]="data">
+                                      <li *ngFor="let item of data.childs; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item.number}} -- {{i}}
+                                             <div ngIf="item.type="'SECTION'">
+                                             {{item.secId}}  
+                                                <li *ngFor="let chil of item.childs; let i = index">
+                                                  section --------{{i}} 
+                                                </li> 
+                                             </div>
+                                             <div ngIf="item.type="'STEP'">
+                                                 {{item.stepId}} 
+                                                 
+                                             </div>
+                                          </li>
+                                     </ul>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+    <div class="col-sm-6">
+            <div class="panel panel-default">
+                    <div class="panel-body">
+                        My prefences:<br/>
+                        <span *ngFor="let item of data.childs; let i = index">{{i + 1}}) {{item}} </span>
+                    </div>
+            </div>
+      </div>
+ 
